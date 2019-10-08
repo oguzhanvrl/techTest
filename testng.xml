@@ -1,0 +1,27 @@
+<!--src/test/resources/launchers/google.xml-->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Google Search Tests" verbose="1" parallel="methods">
+    <parameter name="url" value="https://www.trendyol.com"/>
+    <parameter name="os" value="LINUX"/>
+    <parameter name="node" value="http://localhost:4444"/>
+
+    <test name="Tests on Firefox" preserve-order="true" group-by-instances="true">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.trendyol.gui.test.testsuites.login.LoginTestCases"/>
+        </classes>
+    </test>
+
+
+    <test name="Tests on Chrome" preserve-order="true" group-by-instances="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.trendyol.gui.test.testsuites.login.LoginTestCases"/>
+        </classes>
+    </test>
+
+
+  
+
+</suite>
