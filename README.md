@@ -52,13 +52,20 @@ kullanilmaya ozen gosterilmistir.
 > Test projesinde her testClass birer BaseTestCase(abstract) class ile iliskilidir.
 > Ayni sekilde her testPage birer BasePage(abstract) class ile iliskilidir.
 ```
-resim
+![alt text](https://github.com/oguzhanvrl/techTest/blob/master/ss.png)
 
 ## BoutiqueTestCases
 Challenge testcaselerini calistirdigimizda ilgili path'e 2 adet csv uzantili dosya ekleyecektir.
 
 > System.getProperty("user.dir") + "/target/" + "csvTestResult";
 
+Login testlerinde data driven test kosabilmesi icin excel reader eklemistim, hata aldim excel surumu yuzunden windos da problem olmuyordu mac de excel 2007 surum uyusmadigi hatasini aldim onu duzelttim ama yine hata cikti o yuzden uzerinde fazla duramadim, bilginize. 
+
+> Class 'i incelemek isterseniz CustomIOReader(excelReader) Common > CustomCut altinda bulunuyor. 
+
 
 ## Api testi
-Api testi daha once yapmamistim, local ime kurulum islemleri devam ederken .Net c# denemeler yaptim, ekran goruntuleri asagidadir. Api test projesi repo adresi : 
+Api testi daha once yapmamistim, local ime kurulum islemleri devam ederken .Net c# denemeler yaptim, ekran goruntuleri asagidadir. Api test projesi repo adresi : **[github.com/oguzhanvrl/techTestApi](https://github.com/oguzhanvrl/techTestApi)**
+
+
+![alt text](https://github.com/oguzhanvrl/techTestApi/blob/master/apiTest.PNG)
