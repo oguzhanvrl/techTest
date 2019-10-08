@@ -1,4 +1,4 @@
-# techTest
+# techTest - QA Challenge
 # Not
 
 Projenin isterlerini elimden geldigince tamamlamayaca calistim, hatali fonkisyonlar olabilir. Zaman darligindan dolayi duzeltemedigim bir cok yapi var, calismayan yerlerin kod yapisini incelemenizi isterim, daha genis bir vakitte cozulebilir.
@@ -40,28 +40,45 @@ docker network inspect trendyolGrid
 ```
 
 
+
 ## Test projesine gecis
 
 ```bash
-Java + TestGN + Selenium WebDriver + XPath/CSSselector + LOG4j + Allure(eklenmedi)
+Java + TestGN + Selenium WebDriver + XPath/CSSselector + LOG4j + Browsermob Proxy + Allure(eklenmedi)
 vb. gelistirme araclari kullanildi.
 
-Test projesi mimari yapisin da PageObjectModel patterni kullanildi, kod yapisinda ise OOP temel ilkeleri Soyutlama(Abstraction) + Sarmalama(Encapsulation) + Çok-Şekillilik(Polymorphism) ve Miras Alma/Kalıtım(Inheritance)
-kullanilmaya ozen gosterilmistir.
+Test projesi mimari yapisin da PageObjectModel patterni kullanildi, kod yapisinda ise 
+OOP temel ilkeleri Soyutlama(Abstraction) + Sarmalama(Encapsulation) + Çok-Şekillilik(Polymorphism)
+ve Miras Alma/Kalıtım(Inheritance) kullanilmaya ozen gosterilmistir.
 
 > Test projesinde her testClass birer BaseTestCase(abstract) class ile iliskilidir.
 > Ayni sekilde her testPage birer BasePage(abstract) class ile iliskilidir.
 ```
 ![alt text](https://github.com/oguzhanvrl/techTest/blob/master/ss.png)
 
+
 ## BoutiqueTestCases
 Challenge testcaselerini calistirdigimizda ilgili path'e 2 adet csv uzantili dosya ekleyecektir.
+
+1.Case 'de **req/response** sonuclarina gore islemler yapilmistir.
+2.Case 'de ise **BrowserMobProxy** kullanilarak trafik dinlenilerek testler gerceklesitirilmistir.
 
 > System.getProperty("user.dir") + "/target/" + "csvTestResult";
 
 Login testlerinde data driven test kosabilmesi icin excel reader eklemistim, hata aldim excel surumu yuzunden windos da problem olmuyordu mac de excel 2007 surum uyusmadigi hatasini aldim onu duzelttim ama yine hata cikti o yuzden uzerinde fazla duramadim, bilginize. 
 
 > Class 'i incelemek isterseniz CustomIOReader(excelReader) Common > CustomCut altinda bulunuyor. 
+
+**Login test methodlari**
+
+```bash
+> testWithValidCredentials 
+> testWithInValidCredentials 
+> testWithEmptyCredentials 
+> testWithCheckPasswordMasked
+> testWithCheckIfAfterLoginTakeBackToTheLoginPage
+> testWithCheckSignOnAttemptsLimit
+```
 
 
 ## Api testi
